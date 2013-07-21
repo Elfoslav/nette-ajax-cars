@@ -30,10 +30,10 @@ class CarActions extends UI\Control {
         $this->presenter->flashMessage(sprintf('Liked %s', $this->cars[$id]->name));
         if(!$this->presenter->isAjax()) {
             $this->presenter->redirect('this');
-            $this->invalidateControl('carActions');
         } else {
             $this->presenter->invalidateControl('flash');
-            $this->invalidateControl('carActions');
+            //ak zakomentujem $this->invalidateControl(), tak ajax prejde bez chyby
+            //$this->invalidateControl();
         }
     }
     
@@ -44,7 +44,7 @@ class CarActions extends UI\Control {
             $this->presenter->redirect('this');
         } else {
             $this->presenter->invalidateControl('flash');
-            $this->invalidateControl('carActions');
+            $this->invalidateControl();
         }
     }
     
@@ -55,7 +55,8 @@ class CarActions extends UI\Control {
             $this->presenter->redirect('this');
         } else {
             $this->presenter->invalidateControl('flash');
-            $this->invalidateControl('carActions');
+            //ak zakomentujem $this->invalidateControl(), tak ajax prejde bez chyby
+            //$this->invalidateControl();
         }
     }
 }

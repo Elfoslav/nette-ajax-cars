@@ -1,4 +1,15 @@
 {block content}
     <h1>Car : {$car->name}</h1>
     {control carActions $car}
+    
+    <br>
+    {snippet carActions} 
+        Working actions in CarPresenter: 
+        {if $car->liked}
+            <a n:href="unlike! $car->id" class="ajax">Unlike</a>
+        {else}
+            <a n:href="like! $car->id" class="ajax">Like</a>
+        {/if}
+        , <a n:href="delete! $car->id" class="ajax">Delete</a>
+    {/snippet}
 {/block}
