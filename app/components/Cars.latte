@@ -1,0 +1,11 @@
+{snippet cars}
+<div id="cars">
+    Cars count: {count($cars)}
+	<ul n:if="$cars" n:foreach="$cars as $car">
+		<li>
+            <h3><a href="{plink Cars:show $car->id}">{$car->name}</a></h3>
+            {control carActions $car}
+        </li>
+	</ul>
+</div>
+{/snippet}

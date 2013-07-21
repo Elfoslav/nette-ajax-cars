@@ -1,0 +1,19 @@
+<div>
+    No AJAX:
+    {if $car->liked}
+        <a n:href="unlike! $car->id" class="no-ajax">Unlike</a>
+    {else}
+        <a n:href="like! $car->id" class="no-ajax">Like</a>
+    {/if}
+    , <a n:href="delete! $car->id" class="no-ajax">Delete</a>
+</div>
+
+{snippet carActions} 
+    With AJAX: 
+    {if $car->liked}
+        <a n:href="unlike! $car->id" class="ajax">Unlike</a>
+    {else}
+        <a n:href="like! $car->id" class="ajax">Like</a>
+    {/if}
+    , <a n:href="delete! $car->id" class="ajax">Delete</a>
+{/snippet}
